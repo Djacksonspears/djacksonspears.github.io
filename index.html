@@ -30,11 +30,36 @@
             font-size: 1.2em;
             line-height: 1.6;
         }
-        .services {
-            margin-top: 30px;
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .service-item {
-            margin-bottom: 20px;
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
         }
         .footer {
             background-color: #007bff;
@@ -59,27 +84,26 @@
             <p>At South Mississippi Softwash, we specialize in providing gentle and effective soft washing services for residential and commercial properties across South Mississippi.</p>
         </section>
 
-        <section id="services" class="services">
+        <section id="services">
             <h2>Our Services</h2>
-            <div class="service-item">
-                <h3>House Soft Washing</h3>
-                <p>We use safe and eco-friendly techniques to clean and restore the exterior of your home, including siding, roofs, and more.</p>
-            </div>
-            <div class="service-item">
-                <h3>Driveway and Patio Cleaning</h3>
-                <p>We remove dirt, mold, and algae from driveways and patios, improving their appearance and longevity.</p>
-            </div>
-            <div class="service-item">
-                <h3>Commercial Building Soft Washing</h3>
-                <p>We provide soft washing services for commercial buildings, maintaining a clean and inviting exterior.</p>
-            </div>
+            <ul>
+                <li>House Soft Washing</li>
+                <li>Driveway and Patio Cleaning</li>
+                <li>Commercial Building Soft Washing</li>
+            </ul>
         </section>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>For inquiries or to schedule a consultation, please contact us:</p>
-            <p>Email: contact@southmssoftwash.com<br>
-            Phone: (601) 748-6688</p>
+        <section id="quote">
+            <h2>Request a Quote</h2>
+            <form action="submit-form.php" method="post">
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Your Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
         </section>
     </div>
 
