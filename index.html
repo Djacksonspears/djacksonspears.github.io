@@ -57,7 +57,8 @@
         }
         input[type="email"],
         input[type="text"],
-        textarea {
+        textarea,
+        select {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -82,18 +83,39 @@
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
+        .services {
+            margin-bottom: 15px;
+        }
+        .service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .service-item select,
+        .service-item button {
+            margin-left: 10px;
+        }
+        .service-item button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>South Mississippi Softwash</h1>
-        <p>Your expert in safe and effective soft washing solutions</p>
+        <p>Your expert in pressure washing and soft washing solutions</p>
     </header>
 
     <div class="container">
         <section id="about">
             <h2>About Us</h2>
-            <p>At South Mississippi Softwash, we specialize in providing gentle and effective soft washing services for residential and commercial properties across South Mississippi.</p>
+            <p>At South Mississippi Softwash, we specialize in providing gentle and effective pressure washing and soft washing services for residential and commercial properties across South Mississippi.</p>
         </section>
 
         <section id="services">
@@ -114,6 +136,17 @@
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
 
+                <label for="address">Your Address:</label>
+                <textarea id="address" name="address" rows="2" required></textarea>
+
+                <div class="services">
+                    <label>Services:</label>
+                    <div id="services-container">
+                        <!-- Service items will be dynamically added here -->
+                    </div>
+                    <button type="button" onclick="addService()">Add Service</button>
+                </div>
+
                 <label for="message">Your Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
 
@@ -125,5 +158,33 @@
     <footer>
         <p>&copy; 2024 South Mississippi Softwash. All rights reserved.</p>
     </footer>
+
+    <script>
+        let serviceCount = 0;
+
+        function addService() {
+            serviceCount++;
+
+            const container = document.getElementById('services-container');
+
+            const serviceItem = document.createElement('div');
+            serviceItem.classList.add('service-item');
+            serviceItem.innerHTML = `
+                <select name="service-${serviceCount}">
+                    <option value="">Select a Service</option>
+                    <option value="House Soft Washing">House Soft Washing</option>
+                    <option value="Driveway and Patio Cleaning">Driveway and Patio Cleaning</option>
+                    <option value="Commercial Building Soft Washing">Commercial Building Soft Washing</option>
+                </select>
+                <button type="button" onclick="removeService(this)">Delete</button>
+            `;
+
+            container.appendChild(serviceItem);
+        }
+
+        function removeService(button) {
+            button.parentElement.remove();
+        }
+    </script>
 </body>
 </html>
