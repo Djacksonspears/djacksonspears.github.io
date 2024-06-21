@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Email information
-    $to = "your-email@example.com"; // Replace with your email address
-    $subject = "Quote Request from South Mississippi Softwash";
+    $to = "contact@southmssoftwash.com"; // Replace with your email address
+    $subject = "Quote Request from South Mississippi Softwash Website";
     $body = "Name: $name\n";
     $body .= "Email: $email\n";
     $body .= "Message:\n$message";
