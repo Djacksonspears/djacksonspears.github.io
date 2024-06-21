@@ -16,6 +16,7 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 0 20px;
+            padding-bottom: 60px; /* Added padding to accommodate footer */
         }
         header {
             background-color: #007bff;
@@ -32,6 +33,7 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            z-index: 999; /* Ensure footer is above content */
         }
         section {
             margin-bottom: 40px;
@@ -121,9 +123,13 @@
         <section id="services">
             <h2>Our Services</h2>
             <ul>
-                <li>House Soft Washing</li>
-                <li>Driveway and Patio Cleaning</li>
-                <li>Commercial Building Soft Washing</li>
+                <li>Driveway and Sidewalk Cleaning</li>
+                <li>Siding and Brick Cleaning</li>
+                <li>Roof Cleaning</li>
+                <li>Gutter Cleaning</li>
+                <li>Fence Cleaning</li>
+                <li>Deck and Patio Cleaning</li>
+                <li>Heavy Duty Equipment Cleaning</li>
             </ul>
         </section>
 
@@ -172,9 +178,13 @@
             serviceItem.innerHTML = `
                 <select name="service-${serviceCount}">
                     <option value="">Select a Service</option>
-                    <option value="House Soft Washing">House Soft Washing</option>
-                    <option value="Driveway and Patio Cleaning">Driveway and Patio Cleaning</option>
-                    <option value="Commercial Building Soft Washing">Commercial Building Soft Washing</option>
+                    <option value="Driveway and Sidewalk Cleaning">Driveway and Sidewalk Cleaning</option>
+                    <option value="Siding and Brick Cleaning">Siding and Brick Cleaning</option>
+                    <option value="Roof Cleaning">Roof Cleaning</option>
+                    <option value="Gutter Cleaning">Gutter Cleaning</option>
+                    <option value="Fence Cleaning">Fence Cleaning</option>
+                    <option value="Deck and Patio Cleaning">Deck and Patio Cleaning</option>
+                    <option value="Heavy Duty Equipment Cleaning">Heavy Duty Equipment Cleaning</option>
                 </select>
                 <button type="button" onclick="removeService(this)">Delete</button>
             `;
