@@ -38,9 +38,7 @@
         .header-title {
             font-size: 1.2em;
             font-weight: bold;
-        }
-        .call-for-quote {
-            margin-right: 20px; /* Adjust margin as needed */
+            margin-left: 10px;
         }
         .call-now-btn {
             background-color: #007bff; /* Blue color for the button */
@@ -73,22 +71,15 @@
 <body>
     <header>
         <div>
-            <img src="logo.png" alt="South Mississippi Softwash Logo" class="header-logo">
+            <img src="path/to/your/logo.png" alt="South Mississippi Softwash Logo" class="header-logo">
             <span class="header-title">South Mississippi Softwash</span>
         </div>
-        <div class="call-for-quote">
+        <div>
             <button class="call-now-btn">Call for Free Quote</button>
         </div>
     </header>
 
     <div class="container">
-        
-
-        <div class="centered-text">
-            <h1>Best Pressure Washing Services in South/Central Mississippi</h1>
-            <button onclick="scrollToQuote()" class="call-now-btn">Get a Free Quote</button>
-        </div>
-
         <section id="services">
             <h2>Our Services</h2>
             <ul>
@@ -101,6 +92,11 @@
                 <li>Heavy Duty Equipment Cleaning</li>
             </ul>
         </section>
+
+        <div class="centered-text">
+            <h1>Best Pressure Washing Services in South/Central Mississippi</h1>
+            <button onclick="scrollToQuote()" class="call-now-btn">Get a Free Quote</button>
+        </div>
 
         <section id="quote">
             <h2>Request a Quote</h2>
@@ -119,19 +115,21 @@
                     <div id="services-container">
                         <!-- Service items will be dynamically added here -->
                     </div>
-                    <button type="button" onclick="addService()">Add Service</button>
+                    <button type="button" onclick="addService()" class="call-now-btn">Add Service</button>
                 </div>
 
                 <label for="message">Your Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
 
-                <input type="submit" value="Send">
+                <input type="submit" value="Send" class="call-now-btn">
             </form>
         </section>
+
         <section id="about">
             <h2>About Us</h2>
             <p>At South Mississippi Softwash, we specialize in providing gentle and effective pressure washing and soft washing services for residential and commercial properties across South Mississippi.</p>
         </section>
+
         <section class="contact-section">
             <h2>Contact Us</h2>
             <div class="contact-info">
