@@ -110,6 +110,24 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
+        /* Contact section */
+        .contact-section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .contact-info {
+            text-align: center;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -163,38 +181,18 @@
                 <input type="submit" value="Send">
             </form>
         </section>
+
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>Phone: <a href="tel:+16017486688">601-748-6688</a></p>
+                <p>Email: <a href="mailto:contact@southmssoftwash.com">contact@southmssoftwash.com</a></p>
+            </div>
+        </section>
     </div>
 
-    <script>
-        let serviceCount = 0;
-
-        function addService() {
-            serviceCount++;
-
-            const container = document.getElementById('services-container');
-
-            const serviceItem = document.createElement('div');
-            serviceItem.classList.add('service-item');
-            serviceItem.innerHTML = `
-                <select name="service-${serviceCount}">
-                    <option value="">Select a Service</option>
-                    <option value="Driveway and Sidewalk Cleaning">Driveway and Sidewalk Cleaning</option>
-                    <option value="Siding and Brick Cleaning">Siding and Brick Cleaning</option>
-                    <option value="Roof Cleaning">Roof Cleaning</option>
-                    <option value="Gutter Cleaning">Gutter Cleaning</option>
-                    <option value="Fence Cleaning">Fence Cleaning</option>
-                    <option value="Deck and Patio Cleaning">Deck and Patio Cleaning</option>
-                    <option value="Heavy Duty Equipment Cleaning">Heavy Duty Equipment Cleaning</option>
-                </select>
-                <button type="button" onclick="removeService(this)">Delete</button>
-            `;
-
-            container.appendChild(serviceItem);
-        }
-
-        function removeService(button) {
-            button.parentElement.remove();
-        }
-    </script>
+    <footer>
+        <p>&copy; 2024 South Mississippi Softwash. All rights reserved.</p>
+    </footer>
 </body>
 </html>
