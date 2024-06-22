@@ -65,13 +65,78 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        form input[type="email"],
+        form input[type="text"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        form textarea {
+            resize: vertical; /* Allow vertical resizing of textarea */
+        }
+        form .services {
+            margin-bottom: 15px;
+        }
+        form .services label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        form .services .service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        form .services .service-item select,
+        form .services .service-item button {
+            margin-left: 10px;
+        }
+        form .services .service-item button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        form .services .service-item button:hover {
+            background-color: #c82333; /* Darker shade on hover */
+        }
+
         /* Other styles remain unchanged */
     </style>
 </head>
 <body>
     <header>
         <div>
-            <img src="path/to/your/logo.png" alt="South Mississippi Softwash Logo" class="header-logo">
+            <img src="logo.png" alt="South Mississippi Softwash Logo" class="header-logo">
             <span class="header-title">South Mississippi Softwash</span>
         </div>
         <div>
@@ -111,11 +176,20 @@
                 <textarea id="address" name="address" rows="2" required></textarea>
 
                 <div class="services">
-                    <label>Services:</label>
-                    <div id="services-container">
-                        <!-- Service items will be dynamically added here -->
+                    <label>Select Services:</label>
+                    <div class="service-item">
+                        <select name="service1">
+                            <option value="">Choose a service</option>
+                            <option value="Driveway and Sidewalk Cleaning">Driveway and Sidewalk Cleaning</option>
+                            <option value="Siding and Brick Cleaning">Siding and Brick Cleaning</option>
+                            <option value="Roof Cleaning">Roof Cleaning</option>
+                            <option value="Gutter Cleaning">Gutter Cleaning</option>
+                            <option value="Fence Cleaning">Fence Cleaning</option>
+                            <option value="Deck and Patio Cleaning">Deck and Patio Cleaning</option>
+                            <option value="Heavy Duty Equipment Cleaning">Heavy Duty Equipment Cleaning</option>
+                        </select>
+                        <button type="button" onclick="addService()" class="call-now-btn">Add Service</button>
                     </div>
-                    <button type="button" onclick="addService()" class="call-now-btn">Add Service</button>
                 </div>
 
                 <label for="message">Your Message:</label>
@@ -146,6 +220,11 @@
     <script>
         function scrollToQuote() {
             document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function addService() {
+            // Implement functionality to add services dynamically if needed
+            alert('Service added! Implement functionality as needed.');
         }
     </script>
 </body>
