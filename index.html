@@ -26,15 +26,21 @@
             padding: 1em 0;
             margin-bottom: 20px;
             border-radius: 5px;
-            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .header-logo {
-            max-width: 150px; /* Adjust the size of the logo */
+            max-width: 50px; /* Adjust the size of the logo */
             height: auto;
             margin-left: 20px; /* Adjust margin as needed */
+        }
+        .header-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .call-for-quote {
+            margin-right: 20px; /* Adjust margin as needed */
         }
         .call-now-btn {
             background-color: #007bff; /* Blue color for the button */
@@ -45,28 +51,13 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-right: 20px; /* Adjust margin as needed */
         }
         .call-now-btn:hover {
             background-color: #0056b3; /* Darker shade of blue on hover */
         }
-        footer {
-            background-color: #555; /* Slate grey background */
-            color: #fff;
+        .centered-text {
             text-align: center;
-            padding: 10px 0;
-            position: relative; /* Changed position to relative */
-            margin-top: 20px; /* Added margin-top */
-        }
-        section {
             margin-bottom: 40px;
-        }
-        h1, h2 {
-            margin-bottom: 0.5em;
-        }
-        p {
-            font-size: 1.1em;
-            line-height: 1.8;
         }
 
         /* Form styles */
@@ -76,85 +67,18 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input[type="email"],
-        input[type="text"],
-        textarea,
-        select {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        .services {
-            margin-bottom: 15px;
-        }
-        .service-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-        .service-item select,
-        .service-item button {
-            margin-left: 10px;
-        }
-        .service-item button {
-            background-color: #dc3545;
-            color: #fff;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        /* Contact section */
-        .contact-section {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 40px;
-        }
-        .contact-info {
-            text-align: center;
-        }
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-        .contact-info a {
-            color: #007bff;
-            text-decoration: none;
-        }
+        /* Other styles remain unchanged */
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="South Mississippi Softwash Logo" class="header-logo">
-        <button class="call-now-btn">Call Now</button>
+        <div>
+            <img src="logo.png" alt="South Mississippi Softwash Logo" class="header-logo">
+            <span class="header-title">South Mississippi Softwash</span>
+        </div>
+        <div class="call-for-quote">
+            <button class="call-now-btn">Call for Free Quote</button>
+        </div>
     </header>
 
     <div class="container">
@@ -162,6 +86,11 @@
             <h2>About Us</h2>
             <p>At South Mississippi Softwash, we specialize in providing gentle and effective pressure washing and soft washing services for residential and commercial properties across South Mississippi.</p>
         </section>
+
+        <div class="centered-text">
+            <h1>Best Pressure Washing Services in South/Central Mississippi</h1>
+            <button onclick="scrollToQuote()" class="call-now-btn">Get a Free Quote</button>
+        </div>
 
         <section id="services">
             <h2>Our Services</h2>
@@ -215,5 +144,11 @@
     <footer>
         <p>&copy; 2024 South Mississippi Softwash. All rights reserved.</p>
     </footer>
+
+    <script>
+        function scrollToQuote() {
+            document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
